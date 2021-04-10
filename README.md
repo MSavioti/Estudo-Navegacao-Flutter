@@ -1,3 +1,3 @@
-# com.squadrabootcamp.navegacao_angelo
+# navegacao_angelo
 
 Pequeno repositório em Flutter para aprendizado de navegação em telas.
