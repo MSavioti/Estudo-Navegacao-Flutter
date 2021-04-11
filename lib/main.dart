@@ -39,6 +39,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   int _counter = 0;
+  int _highestValue = 0;
 
   void _decrementCounter([int value = 1]) {
     setState(() {
@@ -49,6 +50,8 @@ class _HomePageState extends State<HomePage> {
   void _incrementCounter([int value = 1]) {
     setState(() {
       _counter += value;
+
+      if (_counter > _highestValue) _highestValue = _counter;
     });
   }
 
@@ -69,12 +72,40 @@ class _HomePageState extends State<HomePage> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Text(
-                  _counter.toString(),
-                  style: TextStyle(
-                    fontSize: 64.0,
-                    color: Colors.purple[800],
-                  ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Text(
+                      _counter.toString(),
+                      style: TextStyle(
+                        fontSize: 64.0,
+                        color: Colors.purple[800],
+                      ),
+                    ),
+                    CircleAvatar(
+                      backgroundColor: Colors.purple[600],
+                      radius: 48.0,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Text(
+                            'Highest',
+                            style: TextStyle(
+                              color: Colors.amber[200],
+                              fontSize: 12.0,
+                            ),
+                          ),
+                          Text(
+                            _highestValue.toString(),
+                            style: TextStyle(
+                              color: Colors.amber[200],
+                              fontSize: 64.0,
+                            ),
+                          ),
+                        ],
+                      ),
+                    )
+                  ],
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -137,7 +168,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                   ],
-                )
+                ),
               ],
             ),
           ),
