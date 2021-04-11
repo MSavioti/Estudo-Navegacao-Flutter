@@ -40,6 +40,12 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int _counter = 0;
 
+  void _incrementCounter() {
+    setState(() {
+      _counter++;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     double _counterCanvasHeight = MediaQuery.of(context).size.height / 2;
@@ -52,7 +58,7 @@ class _HomePageState extends State<HomePage> {
           child: SizedBox(
             height: _counterCanvasHeight,
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
@@ -62,6 +68,24 @@ class _HomePageState extends State<HomePage> {
                     color: Colors.purple[800],
                   ),
                 ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    ElevatedButton(
+                      onPressed: _incrementCounter,
+                      style: ButtonStyle(
+                        backgroundColor:
+                            MaterialStateProperty.all(Colors.purple[600]),
+                      ),
+                      child: Text(
+                        '+1',
+                        style: TextStyle(
+                          color: Colors.amber[200],
+                        ),
+                      ),
+                    )
+                  ],
+                )
               ],
             ),
           ),
