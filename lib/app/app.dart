@@ -8,6 +8,7 @@ class App extends StatelessWidget {
     return MaterialApp(
       title: 'Navegação - Ângelo',
       theme: appTheme(),
+      initialRoute: '/',
       routes: {
         '/': (context) => HomePage(),
         '/contador': (context) => CounterPage(title: 'Navegação - Ângelo')
