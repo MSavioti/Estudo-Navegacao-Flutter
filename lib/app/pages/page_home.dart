@@ -24,7 +24,8 @@ class HomePage extends StatelessWidget {
                 ),
                 LabeledRectangularButton(
                     label: 'Contador',
-                    callback: () => {},
+                    callback: () =>
+                        {Navigator.pushReplacementNamed(context, '/contador')},
                     backgroundColor: Colors.purple[600],
                     textColor: Colors.amber[200])
               ],
