@@ -10,18 +10,28 @@ class AboutPage extends StatelessWidget {
     double _counterCanvasWidth = MediaQuery.of(context).size.width / 1.5;
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Sobre'),
-      ),
-      body: SizedBox(
-        width: _counterCanvasWidth,
-        child: Text(
-          displayText,
-          style: TextStyle(
-            color: Colors.purple[800],
-          ),
+        appBar: AppBar(
+          title: Text('Sobre'),
         ),
-      ),
-    );
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SizedBox(
+                  width: _counterCanvasWidth,
+                  child: Text(
+                    displayText,
+                    style: TextStyle(
+                      color: Colors.purple[800],
+                      fontSize: 24.0,
+                    ),
+                  ),
+                ),
+              ],
+            )
+          ],
+        ));
   }
 }
