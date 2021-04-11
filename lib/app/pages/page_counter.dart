@@ -61,7 +61,10 @@ class _CounterPageState extends State<CounterPage> {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     CircleAvatarWidgetLabelAndName(
-                        label: 'Lowest', text: _lowestValue.toString()),
+                        label: 'Lowest',
+                        text: _lowestValue.toString(),
+                        backgroundColor: Colors.purple[600],
+                        textColor: Colors.amber[200]),
                     Text(
                       _counter.toString(),
                       style: TextStyle(
@@ -70,32 +73,50 @@ class _CounterPageState extends State<CounterPage> {
                       ),
                     ),
                     CircleAvatarWidgetLabelAndName(
-                        label: 'Highest', text: _highestValue.toString()),
+                        label: 'Highest',
+                        text: _highestValue.toString(),
+                        backgroundColor: Colors.purple[600],
+                        textColor: Colors.amber[200]),
                   ],
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     LabeledRectangularButton(
-                        label: '-1', callback: _decrementCounter),
+                        label: '-1',
+                        callback: _decrementCounter,
+                        backgroundColor: Colors.purple[600],
+                        textColor: Colors.amber[200]),
                     LabeledRectangularButton(
-                        label: '+1', callback: _incrementCounter),
+                        label: '+1',
+                        callback: _incrementCounter,
+                        backgroundColor: Colors.purple[600],
+                        textColor: Colors.amber[200]),
                   ],
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     LabeledRectangularButton(
-                        label: '-2', callback: () => {_decrementCounter(2)}),
+                        label: '-2',
+                        callback: () => {_decrementCounter(2)},
+                        backgroundColor: Colors.purple[600],
+                        textColor: Colors.amber[200]),
                     LabeledRectangularButton(
-                        label: '+2', callback: () => {_incrementCounter(2)}),
+                        label: '+2',
+                        callback: () => {_incrementCounter(2)},
+                        backgroundColor: Colors.purple[600],
+                        textColor: Colors.amber[200]),
                   ],
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     LabeledRectangularButton(
-                        label: 'Reset', callback: _resetValues),
+                        label: 'Reset',
+                        callback: _resetValues,
+                        backgroundColor: Colors.purple[600],
+                        textColor: Colors.amber[200]),
                   ],
                 ),
               ],

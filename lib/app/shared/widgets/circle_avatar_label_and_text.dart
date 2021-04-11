@@ -3,15 +3,21 @@ import 'package:flutter/material.dart';
 class CircleAvatarWidgetLabelAndName extends StatelessWidget {
   final String label;
   final String text;
+  final Color backgroundColor;
+  final Color textColor;
 
   const CircleAvatarWidgetLabelAndName(
-      {Key key, @required this.label, @required this.text})
+      {Key key,
+      @required this.label,
+      @required this.text,
+      @required this.backgroundColor,
+      @required this.textColor})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return CircleAvatar(
-      backgroundColor: Colors.purple[600],
+      backgroundColor: backgroundColor,
       radius: 32.0,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -19,14 +25,14 @@ class CircleAvatarWidgetLabelAndName extends StatelessWidget {
           Text(
             label,
             style: TextStyle(
-              color: Colors.amber[200],
+              color: textColor,
               fontSize: 11.0,
             ),
           ),
           Text(
             text,
             style: TextStyle(
-              color: Colors.amber[200],
+              color: textColor,
               fontSize: 28.0,
             ),
           ),
