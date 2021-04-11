@@ -18,7 +18,7 @@ class HomePage extends StatelessWidget {
                 Text(
                   'Teste de navegação',
                   style: TextStyle(
-                    fontSize: 52.0,
+                    fontSize: 32.0,
                     color: Colors.purple[800],
                   ),
                 ),
