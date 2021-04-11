@@ -55,6 +55,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     double _counterCanvasHeight = MediaQuery.of(context).size.height / 2;
+    double _counterCanvasWidth = MediaQuery.of(context).size.width / 2;
 
     return Scaffold(
         appBar: AppBar(
@@ -62,6 +63,7 @@ class _HomePageState extends State<HomePage> {
         ),
         body: Center(
           child: SizedBox(
+            width: _counterCanvasWidth,
             height: _counterCanvasHeight,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
