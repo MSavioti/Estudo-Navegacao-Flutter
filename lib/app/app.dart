@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:navegacao_angelo/app/pages/page_about.dart';
 import 'package:navegacao_angelo/app/pages/page_counter.dart';
 import 'package:navegacao_angelo/app/pages/page_home.dart';
 
@@ -11,7 +12,8 @@ class App extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => HomePage(),
-        '/contador': (context) => CounterPage(title: 'Navegação - Ângelo')
+        '/contador': (context) => CounterPage(title: 'Navegação - Ângelo'),
+        '/sobre': (context) => AboutPage()
       },
     );
   }
