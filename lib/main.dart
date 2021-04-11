@@ -58,6 +58,14 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
+  void _resetValues() {
+    setState(() {
+      _counter = 0;
+      _highestValue = 0;
+      _lowestValue = 0;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     double _counterCanvasHeight = MediaQuery.of(context).size.height / 2;
@@ -189,6 +197,25 @@ class _HomePageState extends State<HomePage> {
                       child: Text(
                         '+2',
                         style: TextStyle(
+                          color: Colors.amber[200],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    ElevatedButton(
+                      onPressed: _resetValues,
+                      style: ButtonStyle(
+                        backgroundColor:
+                            MaterialStateProperty.all(Colors.purple[600]),
+                      ),
+                      child: Text(
+                        'Reset',
+                        style: TextStyle(
+                          fontSize: 14.0,
                           color: Colors.amber[200],
                         ),
                       ),
