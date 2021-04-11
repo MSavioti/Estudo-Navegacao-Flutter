@@ -23,11 +23,18 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
                 LabeledRectangularButton(
-                    label: 'Contador',
-                    callback: () =>
-                        {Navigator.pushReplacementNamed(context, '/contador')},
-                    backgroundColor: Colors.purple[600],
-                    textColor: Colors.amber[200])
+                  label: 'Contador',
+                  callback: () =>
+                      {Navigator.pushReplacementNamed(context, '/contador')},
+                  backgroundColor: Colors.purple[600],
+                  textColor: Colors.amber[200],
+                ),
+                LabeledRectangularButton(
+                  label: 'Sobre',
+                  callback: () => {Navigator.pushNamed(context, '/sobre')},
+                  backgroundColor: Colors.purple[600],
+                  textColor: Colors.amber[200],
+                ),
               ],
             ),
           ),
