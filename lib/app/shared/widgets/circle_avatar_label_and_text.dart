@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 
 class CircleAvatarWidgetLabelAndName extends StatelessWidget {
-  const CircleAvatarWidgetLabelAndName({Key key, this.label, this.text})
-      : super(key: key);
-
   final String label;
   final String text;
+
+  const CircleAvatarWidgetLabelAndName(
+      {Key key, @required this.label, @required this.text})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 
 class LabeledRectangularButton extends StatelessWidget {
-  const LabeledRectangularButton({Key key, this.label, this.callback})
-      : super(key: key);
-
   final String label;
   final Function callback;
+
+  const LabeledRectangularButton(
+      {Key key, @required this.label, @required this.callback})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
