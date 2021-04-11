@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:navegacao_angelo/app/shared/widgets/circle_avatar_label_and_text.dart';
 
 class CounterPage extends StatefulWidget {
   CounterPage({Key key, this.title}) : super(key: key);
@@ -58,29 +59,8 @@ class _CounterPageState extends State<CounterPage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    CircleAvatar(
-                      backgroundColor: Colors.purple[600],
-                      radius: 32.0,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Text(
-                            'Lowest',
-                            style: TextStyle(
-                              color: Colors.amber[200],
-                              fontSize: 11.0,
-                            ),
-                          ),
-                          Text(
-                            _lowestValue.toString(),
-                            style: TextStyle(
-                              color: Colors.amber[200],
-                              fontSize: 28.0,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
+                    CircleAvatarWidgetLabelAndName(
+                        label: 'Lowest', text: _lowestValue.toString()),
                     Text(
                       _counter.toString(),
                       style: TextStyle(
@@ -88,29 +68,8 @@ class _CounterPageState extends State<CounterPage> {
                         color: Colors.purple[800],
                       ),
                     ),
-                    CircleAvatar(
-                      backgroundColor: Colors.purple[600],
-                      radius: 32.0,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Text(
-                            'Highest',
-                            style: TextStyle(
-                              color: Colors.amber[200],
-                              fontSize: 11.0,
-                            ),
-                          ),
-                          Text(
-                            _highestValue.toString(),
-                            style: TextStyle(
-                              color: Colors.amber[200],
-                              fontSize: 28.0,
-                            ),
-                          ),
-                        ],
-                      ),
-                    )
+                    CircleAvatarWidgetLabelAndName(
+                        label: 'Highest', text: _highestValue.toString()),
                   ],
                 ),
                 Row(
