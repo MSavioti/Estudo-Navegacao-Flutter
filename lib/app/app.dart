@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:navegacao_angelo/app/pages/page_counter.dart';
+import 'package:navegacao_angelo/app/pages/page_home.dart';
 
 class App extends StatelessWidget {
   @override
@@ -7,7 +8,10 @@ class App extends StatelessWidget {
     return MaterialApp(
       title: 'Navegação - Ângelo',
       theme: appTheme(),
-      home: CounterPage(title: 'Navegação - Ângelo'),
+      routes: {
+        '/': (context) => HomePage(),
+        '/contador': (context) => CounterPage(title: 'Navegação - Ângelo')
+      },
     );
   }
 
