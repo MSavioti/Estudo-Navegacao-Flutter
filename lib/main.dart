@@ -21,6 +21,14 @@ class MyApp extends StatelessWidget {
       backgroundColor: Colors.amber[100],
       scaffoldBackgroundColor: Colors.amber[100],
       accentColor: Colors.amber[300],
+      appBarTheme: AppBarTheme(
+        textTheme: TextTheme(
+          headline6: TextStyle(
+            color: Colors.purple[800],
+            fontSize: 20.0,
+          ),
+        ),
+      ),
       iconTheme: IconThemeData(
         color: Colors.amber,
       ),
