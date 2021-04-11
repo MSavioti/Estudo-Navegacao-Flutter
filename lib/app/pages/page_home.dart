@@ -22,19 +22,7 @@ class HomePage extends StatelessWidget {
                     color: Colors.purple[800],
                   ),
                 ),
-                LabeledRectangularButton(
-                  label: 'Contador',
-                  callback: () =>
-                      {Navigator.pushReplacementNamed(context, '/contador')},
-                  backgroundColor: Colors.purple[600],
-                  textColor: Colors.amber[200],
-                ),
-                LabeledRectangularButton(
-                  label: 'Sobre',
-                  callback: () => {Navigator.pushNamed(context, '/sobre')},
-                  backgroundColor: Colors.purple[600],
-                  textColor: Colors.amber[200],
-                ),
+                _ButtonsBox()
               ],
             ),
           ),
@@ -44,5 +32,35 @@ class HomePage extends StatelessWidget {
 
           return Future.value(false);
         });
+  }
+}
+
+class _ButtonsBox extends StatelessWidget {
+  const _ButtonsBox({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          LabeledRectangularButton(
+            label: 'Contador',
+            callback: () =>
+                {Navigator.pushReplacementNamed(context, '/contador')},
+            backgroundColor: Colors.purple[600],
+            textColor: Colors.amber[200],
+          ),
+          LabeledRectangularButton(
+            label: 'Sobre',
+            callback: () => {Navigator.pushNamed(context, '/sobre')},
+            backgroundColor: Colors.purple[600],
+            textColor: Colors.amber[200],
+          ),
+        ],
+      ),
+    );
   }
 }
