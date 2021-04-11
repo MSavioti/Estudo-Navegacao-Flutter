@@ -3,9 +3,7 @@ import 'package:navegacao_angelo/app/shared/widgets/button_labeled_rectangular.d
 import 'package:navegacao_angelo/app/shared/widgets/circle_avatar_label_and_text.dart';
 
 class CounterPage extends StatefulWidget {
-  CounterPage({Key key, this.title}) : super(key: key);
-
-  final String title;
+  CounterPage({Key key}) : super(key: key);
 
   @override
   _CounterPageState createState() => _CounterPageState();
@@ -47,7 +45,9 @@ class _CounterPageState extends State<CounterPage> {
 
     return Scaffold(
         appBar: AppBar(
-          title: Text(widget.title),
+          title: Text(
+            'Contador',
+          ),
         ),
         body: Center(
           child: SizedBox(

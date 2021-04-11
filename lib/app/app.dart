@@ -12,7 +12,7 @@ class App extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => HomePage(),
-        '/contador': (context) => CounterPage(title: 'Navegação - Ângelo'),
+        '/contador': (context) => CounterPage(),
         '/sobre': (context) => AboutPage()
       },
     );
