@@ -125,8 +125,10 @@ class _CounterPageState extends State<CounterPage> {
                     children: [
                       LabeledRectangularButton(
                         label: 'Home',
-                        callback: () =>
-                            {Navigator.pushReplacementNamed(context, '/')},
+                        callback: () => {
+                          Navigator.pushReplacementNamed(context, '/',
+                              arguments: _counter)
+                        },
                         backgroundColor: Colors.purple[600],
                         textColor: Colors.amber[200],
                       ),

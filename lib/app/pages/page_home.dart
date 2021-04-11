@@ -6,6 +6,8 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final int _maiorCntagem = ModalRoute.of(context).settings.arguments ?? 0;
+
     return WillPopScope(
         child: Scaffold(
           appBar: AppBar(
@@ -19,6 +21,13 @@ class HomePage extends StatelessWidget {
                   'Teste de navegação',
                   style: TextStyle(
                     fontSize: 32.0,
+                    color: Colors.purple[800],
+                  ),
+                ),
+                Text(
+                  'Último valor contado: $_maiorCntagem',
+                  style: TextStyle(
+                    fontSize: 16.0,
                     color: Colors.purple[800],
                   ),
                 ),
