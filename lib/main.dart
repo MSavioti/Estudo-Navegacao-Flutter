@@ -40,10 +40,13 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int _counter = 0;
   int _highestValue = 0;
+  int _lowestValue = 0;
 
   void _decrementCounter([int value = 1]) {
     setState(() {
       _counter -= value;
+
+      if (_counter < _lowestValue) _lowestValue = _counter;
     });
   }
 
@@ -58,7 +61,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     double _counterCanvasHeight = MediaQuery.of(context).size.height / 2;
-    double _counterCanvasWidth = MediaQuery.of(context).size.width / 2;
+    double _counterCanvasWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
         appBar: AppBar(
@@ -75,16 +78,39 @@ class _HomePageState extends State<HomePage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
+                    CircleAvatar(
+                      backgroundColor: Colors.purple[600],
+                      radius: 32.0,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Text(
+                            'Lowest',
+                            style: TextStyle(
+                              color: Colors.amber[200],
+                              fontSize: 11.0,
+                            ),
+                          ),
+                          Text(
+                            _lowestValue.toString(),
+                            style: TextStyle(
+                              color: Colors.amber[200],
+                              fontSize: 28.0,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
                     Text(
                       _counter.toString(),
                       style: TextStyle(
-                        fontSize: 64.0,
+                        fontSize: 52.0,
                         color: Colors.purple[800],
                       ),
                     ),
                     CircleAvatar(
                       backgroundColor: Colors.purple[600],
-                      radius: 48.0,
+                      radius: 32.0,
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
@@ -92,14 +118,14 @@ class _HomePageState extends State<HomePage> {
                             'Highest',
                             style: TextStyle(
                               color: Colors.amber[200],
-                              fontSize: 12.0,
+                              fontSize: 11.0,
                             ),
                           ),
                           Text(
                             _highestValue.toString(),
                             style: TextStyle(
                               color: Colors.amber[200],
-                              fontSize: 64.0,
+                              fontSize: 28.0,
                             ),
                           ),
                         ],
