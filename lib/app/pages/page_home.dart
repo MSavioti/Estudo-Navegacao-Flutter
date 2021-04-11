@@ -32,6 +32,8 @@ class HomePage extends StatelessWidget {
           ),
         ),
         onWillPop: () async {
+          if (Navigator.canPop(context)) return Future.value(true);
+
           return Future.value(false);
         });
   }
