@@ -38,12 +38,33 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  int _counter = 0;
+
   @override
   Widget build(BuildContext context) {
+    double _counterCanvasHeight = MediaQuery.of(context).size.height / 2;
+
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-    );
+        appBar: AppBar(
+          title: Text(widget.title),
+        ),
+        body: Center(
+          child: SizedBox(
+            height: _counterCanvasHeight,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(
+                  _counter.toString(),
+                  style: TextStyle(
+                    fontSize: 64.0,
+                    color: Colors.purple[800],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ));
   }
 }
