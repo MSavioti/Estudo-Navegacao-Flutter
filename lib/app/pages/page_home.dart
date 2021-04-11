@@ -6,29 +6,33 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Início'),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            Text(
-              'Teste de navegação',
-              style: TextStyle(
-                fontSize: 52.0,
-                color: Colors.purple[800],
-              ),
+    return WillPopScope(
+        child: Scaffold(
+          appBar: AppBar(
+            title: Text('Início'),
+          ),
+          body: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Text(
+                  'Teste de navegação',
+                  style: TextStyle(
+                    fontSize: 52.0,
+                    color: Colors.purple[800],
+                  ),
+                ),
+                LabeledRectangularButton(
+                    label: 'Contador',
+                    callback: () => {},
+                    backgroundColor: Colors.purple[600],
+                    textColor: Colors.amber[200])
+              ],
             ),
-            LabeledRectangularButton(
-                label: 'Contador',
-                callback: () => {},
-                backgroundColor: Colors.purple[600],
-                textColor: Colors.amber[200])
-          ],
+          ),
         ),
-      ),
-    );
+        onWillPop: () async {
+          return Future.value(false);
+        });
   }
 }
