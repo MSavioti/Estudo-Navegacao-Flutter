@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:navegacao_angelo/app/shared/widgets/button_labeled_rectangular.dart';
 import 'package:navegacao_angelo/app/shared/widgets/circle_avatar_label_and_text.dart';
 
 class CounterPage extends StatefulWidget {
@@ -75,82 +76,26 @@ class _CounterPageState extends State<CounterPage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    ElevatedButton(
-                      onPressed: _decrementCounter,
-                      style: ButtonStyle(
-                        backgroundColor:
-                            MaterialStateProperty.all(Colors.purple[600]),
-                      ),
-                      child: Text(
-                        '-1',
-                        style: TextStyle(
-                          color: Colors.amber[200],
-                        ),
-                      ),
-                    ),
-                    ElevatedButton(
-                      onPressed: _incrementCounter,
-                      style: ButtonStyle(
-                        backgroundColor:
-                            MaterialStateProperty.all(Colors.purple[600]),
-                      ),
-                      child: Text(
-                        '+1',
-                        style: TextStyle(
-                          color: Colors.amber[200],
-                        ),
-                      ),
-                    ),
+                    LabeledRectangularButton(
+                        label: '-1', callback: _decrementCounter),
+                    LabeledRectangularButton(
+                        label: '+1', callback: _incrementCounter),
                   ],
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    ElevatedButton(
-                      onPressed: () => {_decrementCounter(2)},
-                      style: ButtonStyle(
-                        backgroundColor:
-                            MaterialStateProperty.all(Colors.purple[600]),
-                      ),
-                      child: Text(
-                        '-2',
-                        style: TextStyle(
-                          color: Colors.amber[200],
-                        ),
-                      ),
-                    ),
-                    ElevatedButton(
-                      onPressed: () => {_incrementCounter(2)},
-                      style: ButtonStyle(
-                        backgroundColor:
-                            MaterialStateProperty.all(Colors.purple[600]),
-                      ),
-                      child: Text(
-                        '+2',
-                        style: TextStyle(
-                          color: Colors.amber[200],
-                        ),
-                      ),
-                    ),
+                    LabeledRectangularButton(
+                        label: '-2', callback: () => {_decrementCounter(2)}),
+                    LabeledRectangularButton(
+                        label: '+2', callback: () => {_incrementCounter(2)}),
                   ],
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    ElevatedButton(
-                      onPressed: _resetValues,
-                      style: ButtonStyle(
-                        backgroundColor:
-                            MaterialStateProperty.all(Colors.purple[600]),
-                      ),
-                      child: Text(
-                        'Reset',
-                        style: TextStyle(
-                          fontSize: 14.0,
-                          color: Colors.amber[200],
-                        ),
-                      ),
-                    ),
+                    LabeledRectangularButton(
+                        label: 'Reset', callback: _resetValues),
                   ],
                 ),
               ],
