@@ -40,6 +40,12 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int _counter = 0;
 
+  void _decrementCounter() {
+    setState(() {
+      _counter--;
+    });
+  }
+
   void _incrementCounter() {
     setState(() {
       _counter++;
@@ -72,6 +78,19 @@ class _HomePageState extends State<HomePage> {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     ElevatedButton(
+                      onPressed: _decrementCounter,
+                      style: ButtonStyle(
+                        backgroundColor:
+                            MaterialStateProperty.all(Colors.purple[600]),
+                      ),
+                      child: Text(
+                        '-1',
+                        style: TextStyle(
+                          color: Colors.amber[200],
+                        ),
+                      ),
+                    ),
+                    ElevatedButton(
                       onPressed: _incrementCounter,
                       style: ButtonStyle(
                         backgroundColor:
@@ -83,7 +102,7 @@ class _HomePageState extends State<HomePage> {
                           color: Colors.amber[200],
                         ),
                       ),
-                    )
+                    ),
                   ],
                 )
               ],
