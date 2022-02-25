@@ -1,3 +1,1 @@
-# navegacao_angelo
-
-Pequeno repositório em Flutter para aprendizado de navegação em telas.
+Small repo created to learn how to use the Navigator class.
